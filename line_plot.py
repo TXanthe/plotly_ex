@@ -9,7 +9,7 @@ data = pd.read_csv('data/data.csv')
 
 # Basic Line
 pyplt = py.offline.plot
-# 600000浦发银行20170301-20170428涨跌幅度数据，数据来源Wind
+
 SP500 = data['SP500']
 oil = data['CrudeOil']
 date = data['Date']
@@ -17,7 +17,11 @@ date = data['Date']
 trace1 = go.Scatter(
     x = date,
     y = SP500,
-    # connectgaps = False
+    name = 'SP500',
+    line = dict(
+        color = ('rgb(205, 12, 24)'),
+        width = 4),
+    connectgaps = True
 )
 trace2 = go.Scatter(
     x = date,
